@@ -26,7 +26,6 @@ class UpdateProductRequest extends FormRequest
         return [
             'name'=>'required',
             'price'=>'required|integer|between:0,10000',
-            // 'image'=>'required|image|mimes:png,jpeg',
             'image' => $this->productHasImage()
                 ? 'nullable|image|mimes:png,jpeg'
                 : 'required|image|mimes:png,jpeg',
@@ -50,10 +49,9 @@ class UpdateProductRequest extends FormRequest
         ];
     }
 
-    // 補助メソッド：既存の商品画像があるか確認
     protected function productHasImage()
     {
-        $productId = $this->route('productId'); // ルートパラメータ名に合わせる
+        $productId = $this->route('productId'); 
         $product = \App\Models\Product::find($productId);
         return $product && $product->img;
     }

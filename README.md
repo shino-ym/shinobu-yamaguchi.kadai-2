@@ -29,8 +29,8 @@ DB_PASSWORD=laravel_pass
 `php artisan db:seed`
 
 ## 使用技術
-- PHP 8.4.10
-- laravel 8.75
+- PHP 8.1.33
+- laravel 8.83.8
 - MySQL 8.0.36
 
 ## ER図

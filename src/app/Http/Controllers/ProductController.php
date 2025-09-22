@@ -43,7 +43,6 @@ class ProductController extends Controller
         return view('products.register',compact('seasons'));
     }
 
-    // 新規登録（db保存）
     public function store(StoreProductRequest $request)
     {
         $data = $request->validated();
@@ -72,7 +71,7 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-        $sort = $request->input('sort'); // URLではなく 'asc' / 'desc' が入る想定
+        $sort = $request->input('sort');
 
         $query = Product::query();
 
@@ -115,11 +114,9 @@ class ProductController extends Controller
         $product->price = $request->input('price');
         $product->description = $request->input('description');
 
-        // 画像が選択されていれば保存
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $path = $request->file('image')->store('img', 'public'); // storage/app/public/img に保存
-            $product->img = $path; // DB に保存するのは相対パス
-        }
+            $path = $request->file('image')->store('img', 'public');
+            $product->img = $path;
 
         $product->save();
 
@@ -127,6 +124,7 @@ class ProductController extends Controller
         $product->seasons()->sync($request->season_id ?? []);
 
         return redirect()->route('products.index');
+        }
     }
 
     // 消去
@@ -134,7 +132,6 @@ class ProductController extends Controller
     {
         $product = Product::find($productId);
 
-        // 画像も削除したい場合は storage から削除
         if ($product->img) {
             \Storage::disk('public')->delete($product->img);
         }
@@ -144,3 +141,4 @@ class ProductController extends Controller
 
     }
 }
+
