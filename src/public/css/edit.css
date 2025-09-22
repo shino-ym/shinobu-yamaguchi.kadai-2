@@ -1,0 +1,303 @@
+.edit-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    padding: 0 40px;
+    gap: 30px;
+    opacity: 1;
+    position: relative;
+    align-items: center;
+}
+
+.edit-form {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+/* 商品一覧の列 */
+.product-link,
+.current {
+    font-family: Hiragino Kaku Gothic Pro;
+    font-weight: 300;
+    font-style: W3;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.product-link {
+    color: #0085FF;
+    text-decoration: none;
+}
+
+.current {
+    color: #4B4B4B;
+}
+
+.product-card {
+    display: flex;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    opacity: 1;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/* 上の段・左側画像 */
+.product-pic {
+    flex: 1 1 374px;
+}
+
+.img-card {
+    max-width: 374px;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+}
+
+.img-btn {
+    white-space: nowrap;
+    max-width: 118px;
+    width: 100%;
+    opacity: 1;
+    border-width: 1px;
+    font-family: Hiragino Kaku Gothic Pro;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #4B4B4B;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.file-name {
+    font-family: Hiragino Kaku Gothic Pro;
+    font-weight: 300;
+    font-style: W3;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #888888;
+}
+
+/* 上の段・右側 */
+.product-summary {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 396px;
+    max-width: 396px;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-summary .form-group {
+    width: 100%;
+}
+
+.section-label {
+    font-family: Hiragino Kaku Gothic Pro;
+    font-weight: 300;
+    font-style: W3;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #4B4B4B;
+}
+
+.name-input,
+.price-input {
+    width: 100%;
+    padding: 11px 10px;
+    gap: 10px;
+    opacity: 1;
+    border-radius: 5px;
+    border-width: 1px;
+    font-family: Hiragino Kaku Gothic Pro;
+    font-weight: 300;
+    font-style: W3;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+/* 季節・丸型チェックボタン */
+.circle-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.circle-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    position: relative;
+    padding-left: 0;
+}
+
+.circle-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.circle-checkbox .checkmark {
+    position: relative;
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
+    border: 1px solid #4B4B4B;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-checkbox label:hover .checkmark {
+    border-color: #888;
+}
+
+.circle-checkbox input:checked~.checkmark {
+    background-color: #4B4B4B;
+    border-color: #FFF;
+}
+
+.circle-checkbox .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.circle-checkbox input:checked~.checkmark::after {
+    display: block;
+}
+
+/* 商品説明 */
+.product-description {
+    width: 100%;
+    margin-top: 30px;
+    opacity: 1;
+}
+
+.product-description textarea {
+    width: 100%;
+    padding: 12px 10px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    box-sizing: border-box;
+    min-height: 160px;
+    font-family: Hiragino Kaku Gothic Pro;
+    font-weight: 300;
+    font-style: W3;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #4B4B4B;
+}
+
+/* 送信ボタン */
+.center-buttons {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    max-width: 200px;
+    width: 100%;
+    opacity: 1;
+    border-radius: 5px;
+    gap: 10px;
+    padding: 13px 10px;
+    box-shadow: 0px 4px 10px 0px #0000001A;
+    background: #F5C800;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #DDB400;
+}
+
+.back-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    width: 100%;
+    opacity: 1;
+    border-radius: 5px;
+    gap: 10px;
+    padding: 13px 10px;
+    background: #E0DFDE;
+    box-shadow: 0px 4px 10px 0px #0000001A;
+    text-decoration: none;
+    color: #4B4B4B;
+    transition: background-color 0.3s ease;
+}
+
+/* ゴミ箱 */
+.delete-wrapper {
+    max-width: 800px;
+}
+
+.delete-form {
+    position: absolute;
+    top: 90%;
+    right: 50px;
+    transform: translateY(-50%);
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.delete-btn img {
+    width: 32px;
+    height: 32px;
+}
+
+/* エラー */
+.error,
+.error-list {
+    color: red;
+    list-style: none;
+    padding-left: 0;
+    font-family: Hiragino Kaku Gothic Pro;
+    font-weight: 300;
+    font-style: W3;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
