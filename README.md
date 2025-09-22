@@ -1,7 +1,7 @@
 # 基礎学習ターム 確認テスト_もぎたて
 ## 環境構築
 **Dockerビルド**\
-1.`git clone git@github.com:shino-ym/shinobu-yamaguchi.kadai-2.git`
+1.`git clone git@github.com:shino-ym/shinobu-yamaguchi.kadai-2.git`  
 2.DockerDesktopアプリを立ち上げる\
 3.`docker-compose up -d --build`
 > MySQLは、OSによって移動しない場合があるので、それぞれのpcに合わせてdocker-compose.ymlファイルを編集してください。
